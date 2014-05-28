@@ -25,7 +25,7 @@ DEVICES.each { |device|
   response = http.request(request)
   data = JSON.parse(response.body)
   data["time"] = Time.now
-  puts data
-#  col.insert(data)
+#  puts data
+  col.insert(data)
 #Important note - using to_a pulls all of the full result set into memory and is inefficient if you can process by each individual document. To process with more memory efficiency, use the each method with a code block for the cursor.
 }
